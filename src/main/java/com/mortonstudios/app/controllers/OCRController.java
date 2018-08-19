@@ -1,12 +1,12 @@
 package com.mortonstudios.app.controllers;
 
 import com.mortonstudios.app.processing.ImageProcessing;
-import com.mortonstudios.app.serializable.OCRDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by Cameron on 17/08/2018.
@@ -14,8 +14,6 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class OCRController {
-
-    private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping(value = "/api/processing", method = RequestMethod.POST)
     public ResponseEntity processing(@RequestParam(value="image") String image){
